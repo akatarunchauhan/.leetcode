@@ -11,7 +11,7 @@
  */
 var majorityElement = function (nums) {
     let count = 0;
-    let candidate = null;
+    let candidate;
 
     for (let i = 0; i < nums.length; i++) {
         if (count === 0) {
@@ -23,5 +23,6 @@ var majorityElement = function (nums) {
             count--;
         }
     }
+    return candidate;
 };
 // @lc code=end
