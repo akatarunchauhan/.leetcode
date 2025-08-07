@@ -7,19 +7,19 @@
 # @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        for _ in prices:
-            buy_index = prices.index(min(prices))
-            sell_index =  prices.index(max(prices))
-            
-            if (buy_index < sell_index):
-                profit = max(prices) - min(prices)
-            elif(prices.index(max(prices))<prices.index(min(prices))):
-                prices.remove(max(prices))
-            # elif(prices.index(max(prices))<prices.index(min(prices))):
-            #     prices.remove(max(prices))
-                # prices.remove(min(prices))
-                
+        l = 0
+        r = 1
+        profit = 0
+        while (r < len(prices)):
+            if (prices[r] > prices[l]):
+                curr_profit = prices[r] - prices[l]
+                profit = max(profit, curr_profit)
+            else:
+                l = r
+            r += 1
+        
         return profit
+                
         
         
 # @lc code=end
