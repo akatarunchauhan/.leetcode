@@ -12,10 +12,11 @@ public:
     {
         while (b != 0)
         {
+            int carry = (a & b) << 1;
             a = a ^ b;
-            b = a & b << 1;
+            b = carry;
         }
-        return a ^ b;
+        return a;
     }
 };
 // @lc code=end
