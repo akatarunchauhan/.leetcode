@@ -7,6 +7,12 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
+        map = {}
+        for i,cur in enumerate(nums):
+            x = target-cur
+            if x in map:
+                return [i,map.get(x)]
+            else:
+                map[cur] = i
 # @lc code=end
 
